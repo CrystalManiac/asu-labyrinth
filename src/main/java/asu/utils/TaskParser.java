@@ -9,13 +9,12 @@ import java.util.List;
 public class TaskParser {
     public static List<Task> readTasksFormFile(String filename) throws IOException {
         final String resourcesPath = "src/main/resources/input/";
-        BufferedReader reader;
         File file = new File(String.format(resourcesPath+"%s", filename));
         String absolutePath = file.getAbsolutePath();
 
         List<Task> taskList = new ArrayList<>();
 
-        reader = new BufferedReader(new FileReader(absolutePath));
+        BufferedReader reader = new BufferedReader(new FileReader(absolutePath));
         reader.readLine();
         String line = reader.readLine();
 
